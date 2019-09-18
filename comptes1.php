@@ -1,11 +1,19 @@
+<html> <he</html>
+
+
 
 <?php
+// stp dans le navigateur ferme tout onglet
 if (isset ($_GET['idc'])) {
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gestioncomptebancaire";
+
+
+
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,6 +24,8 @@ if ($conn->connect_error) {
 
 $sql = "SELECT id, numCompte, solde, idclient FROM cmptes where idclient= " .$_GET['idc'];
 $result = $conn->query($sql);
+
+
 
 if ($result->num_rows > 0) {
     // output data of each row
